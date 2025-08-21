@@ -1,0 +1,142 @@
+/* ==========================
+   Professional Portfolio CSS
+   ========================== */
+
+:root{
+  --bg: #0b0f19;
+  --card: #121829;
+  --muted: #92a0b3;
+  --text: #e6e9ef;
+  --brand: #6aa7ff;
+  --brand-2:#7affd7;
+  --accent:#ffd166;
+  --border: #22304a;
+  --shadow: 0 10px 30px rgba(0,0,0,.25);
+  --radius-xl: 1.25rem;
+  --radius-lg: .85rem;
+  --radius-md: .65rem;
+  --sp-1: .5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2rem;
+  --sp-5: 3rem;
+  --content: 1150px;
+  --font: "Inter", system-ui, sans-serif;
+}
+
+body{
+  margin:0;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+/* Layout */
+.container{
+  width: 100%;
+  max-width: var(--content);
+  margin-inline: auto;
+  padding-inline: var(--sp-2);
+}
+
+.section{ padding: var(--sp-5) var(--sp-2); }
+.section h2{ font-size: 2rem; margin-bottom: var(--sp-2); }
+.lead{ color: var(--muted); max-width: 70ch; }
+
+/* Header */
+.site-header{
+  position: sticky; top:0;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
+.navbar{
+  display:flex; justify-content:space-between; align-items:center;
+  padding: .75rem 0;
+}
+.brand{ font-weight:700; color:var(--text); text-decoration:none; display:flex; align-items:center; gap:.5rem; }
+.brand .logo{ background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#041627; font-weight:900; padding:.5rem; border-radius:8px; }
+
+.nav-links{ display:flex; gap:.75rem; }
+.nav-links a{
+  color:var(--text); text-decoration:none; padding:.5rem .75rem; border-radius:var(--radius-md);
+}
+.nav-links a:hover{ background:var(--border); }
+.nav-cta{ background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#031327 !important; font-weight:700; border-radius:999px; }
+
+/* Hero */
+.hero{ display:grid; gap:2rem; grid-template-columns: 1fr 1fr; align-items:center; }
+.hero h1{ font-size:2.5rem; margin-bottom:1rem; }
+.badges{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.badge{ padding:.35rem .6rem; border-radius:999px; background:rgba(255,255,255,0.1); border:1px solid var(--border); }
+
+/* Projects */
+.grid{ display:grid; gap:1.5rem; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); }
+.project-card{ background:var(--card); padding:1.5rem; border-radius:var(--radius-xl); box-shadow:var(--shadow); }
+.project-meta{ color:var(--muted); font-size:.9rem; margin-top:.5rem; }
+
+/* Resume */
+.timeline{ border-left:2px solid var(--border); padding-left:1rem; }
+.timeline .item{ margin-bottom:1rem; position:relative; }
+.timeline .item:before{ content:""; position:absolute; left:-.65rem; top:.4rem; width:.8rem; height:.8rem; border-radius:50%; background:var(--brand); }
+
+/* Resume Section */
+.resume-section {
+  text-align: center;
+  padding: 100px 20px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.resume-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.resume-section p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Resume Button */
+.resume-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #0077cc;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+}
+
+.resume-btn:hover {
+  background: #005fa3;
+  transform: translateY(-2px);
+}
+
+.resume-btn:active {
+  transform: scale(0.98);
+}
+
+/* Contact */
+.form{ display:grid; gap:1rem; max-width:600px; }
+.form input, .form textarea{ width:100%; padding:.8rem 1rem; border-radius:var(--radius-lg); border:1px solid var(--border); background:var(--card); color:var(--text); }
+.button{ background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#031327; font-weight:700; padding:.8rem 1.2rem; border:none; border-radius:999px; cursor:pointer; }
+
+/* Footer */
+.footer{ text-align:center; padding:1.5rem; border-top:1px solid var(--border); color:var(--muted); margin-top:2rem; }
+
+/* Responsive */
+@media(max-width:860px){
+  .hero{ grid-template-columns:1fr; }
+  .nav-links{ flex-direction:column; }
+}
